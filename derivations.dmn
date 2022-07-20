@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_08k10i4" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="Decision_03noef2" name="Derivations">
+    <informationRequirement id="InformationRequirement_0agewad">
+      <requiredInput href="#InputData_0v79wb2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1v55pxk">
+      <output id="OutputClause_05atuqt" name="AGE_NOW" typeRef="integer" />
+      <output id="OutputClause_0ah41re" name="ANSWER" typeRef="integer" />
+      <rule id="DecisionRule_082o6yb">
+        <description></description>
+        <outputEntry id="LiteralExpression_0jhcnik">
+          <text>years and months duration(PERSONBIRTHDATE, today()).years</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_158dgnb">
+          <text>42</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0v79wb2" name="DIDS" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="DMNShape_1ggk3qc" dmnElementRef="Decision_03noef2">
+        <dc:Bounds height="80" width="180" x="160" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_05vb3vb" dmnElementRef="InputData_0v79wb2">
+        <dc:Bounds height="45" width="125" x="187" y="267" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1pjrnbf" dmnElementRef="InformationRequirement_0agewad">
+        <di:waypoint x="250" y="267" />
+        <di:waypoint x="250" y="180" />
+        <di:waypoint x="250" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
