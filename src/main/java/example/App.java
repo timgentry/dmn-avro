@@ -93,11 +93,23 @@ public class App {
             String outputType = String.valueOf(m.getValue());
 
             switch (outputType) {
+                case "boolean":
+                    fields.add(new Schema.Field(outputName, SchemaBuilder.builder().booleanType()));
+
+                    break;
+                case "date":
+                    // fields.add(new Schema.Field(outputName, LogicalTypes.date().addToSchema(Schema.create(SchemaBuilder.builder().intType()))));
+                    fields.add(new Schema.Field(outputName, LogicalTypes.date().addToSchema(SchemaBuilder.builder().intType())));
+
+                    break;
                 case "integer":
-                    Schema.Field field = new Schema.Field(outputName, SchemaBuilder.builder().intType());
                     // Schema.Field field = new Schema.Field("new_field",
                     // SchemaBuilder.builder().intType(), "NewField", 10);
-                    fields.add(field);
+                    fields.add(new Schema.Field(outputName, SchemaBuilder.builder().intType()));
+
+                    break;
+                case "string":
+                    fields.add(new Schema.Field(outputName, SchemaBuilder.builder().stringType()));
 
                     break;
                 default:
